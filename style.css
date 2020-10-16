@@ -8,13 +8,13 @@
 
 * {
   box-sizing: border-box;
-  outline: none;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #1e1f22;
-  margin: 0;
   color: #fff;
   line-height: 1.6;
 }
@@ -25,12 +25,17 @@ header {
   justify-content: flex-end;
   align-items: center;
   padding: 10px 20px;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  border: 1px white solid;
 }
 
 .logo {
   cursor: pointer;
   width: 150px;
   margin-right: auto;
+  border: 1px white solid;
 }
 
 li,
@@ -41,6 +46,7 @@ button {
   font-size: 16px;
   color: #edf0f1;
   text-decoration: none;
+  outline: none;
 }
 
 .nav_links {
@@ -61,7 +67,7 @@ button {
 }
 
 button {
-  padding: 10px 25px;
+  padding: 10px 20px;
   margin-left: 20px;
   background-color: rgba(4, 153, 131, 1);
   border: none;
@@ -74,8 +80,8 @@ button:hover {
   background-color: rgba(4, 153, 131, 0.8);
 }
 
-/* showcase */
-#showcase {
+/* banner section */
+#banner {
   margin: 0;
   padding: 0;
   background: url("./img/home/Shanghai_landscape_2.jpg") no-repeat center/cover;
@@ -85,38 +91,21 @@ button:hover {
   overflow-y: hidden;
 }
 
-#showcase::after {
+#banner::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
-#showcase * {
+#banner * {
   z-index: 1;
 }
 
-#showcase h1 {
-  color: var(--primary-color);
-  font-size: 6rem;
-}
-
-#showcase h2 {
-  color: var(--secondary-color);
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-#showcase p {
-  text-align: center;
-}
-
-/* Sections */
-.section-main {
+.banner-text {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,10 +116,57 @@ button:hover {
   border: 1px white solid;
 }
 
+#banner h1 {
+  color: var(--primary-color);
+  font-size: 6rem;
+  margin-bottom: 1rem;
+  border: 1px white solid;
+}
+
+#banner h2 {
+  color: var(--secondary-color);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  border: 1px white solid;
+}
+
+#banner p {
+  text-align: center;
+  border: 1px white solid;
+}
+
+/* Sections */
+.section {
+  padding: 2rem 0;
+}
+
+.section-head {
+  font-size: 2rem;
+}
+
+.services {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+}
+
+.service {
+  border: 1px orange solid;
+}
+
+
 /* Utility Classes */
 .container {
   max-width: 1180px;
   text-align: center;
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 1rem 3rem;
+  border: 1px solid orange;
+}
+
+i {
+  width: 100px;
+  height: 100px;
 }
