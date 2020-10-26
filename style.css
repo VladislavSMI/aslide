@@ -143,6 +143,8 @@ button:hover {
 
 .section-head {
   font-size: 2rem;
+  margin: 0;
+  padding: 2rem 0;
 }
 
 .services {
