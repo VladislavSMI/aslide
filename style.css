@@ -28,14 +28,19 @@ header {
   width: 100%;
   position: fixed;
   z-index: 100;
-  border: 1px white solid;
+  border-bottom: 1px solid var(--primary-color);
+  transition: all 0.5s; 
+}
+
+.active {
+  background-color: #1e1f22;
+  transition: all 0.5s;
 }
 
 .logo {
   cursor: pointer;
   width: 150px;
   margin-right: auto;
-  border: 1px white solid;
 }
 
 li,
