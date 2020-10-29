@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 
 /* CSS Variable */
 :root {
@@ -8,81 +8,88 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Merriweather", sans-serif;
   background-color: #1e1f22;
   color: #fff;
   line-height: 1.6;
 }
 
 /* Header */
-header {
+.navbar {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 10px 20px;
-  width: 100%;
   position: fixed;
+  justify-content: space-between;
+  align-items: center;
   z-index: 100;
-  border-bottom: 1px solid var(--primary-color);
-  transition: all 0.5s; 
+  width: 100%;
+  /* transition: all 0.5s; */
 }
 
-.active {
+.scrollNav{
   background-color: #1e1f22;
-  transition: all 0.5s;
+  border-bottom: 1px solid var(--primary-color);
+  /* transition: all 0.5s; */
 }
 
 .logo {
   cursor: pointer;
   width: 150px;
-  margin-right: auto;
+  margin: 1rem;
 }
 
-li,
-a,
-button {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  color: #edf0f1;
-  text-decoration: none;
-  outline: none;
+.navbar-links {
+  height: 100%;
 }
 
-.nav_links {
+.navbar-links ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  padding: 0;
+}
+
+.navbar-links li {
   list-style: none;
 }
 
-.nav_links li {
-  display: inline-block;
-  padding: 0 20px;
-}
-
-.nav_links li a {
+.navbar-links li a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  padding: 1rem;
   transition: all 0.5s ease 0s;
 }
 
-.nav_links li a:hover {
+.navbar-links li a {
+  transition: all 0.5s ease 0s;
+}
+
+.navbar-links li a:hover {
   color: #08b89d;
 }
 
-button {
-  padding: 10px 20px;
-  margin-left: 20px;
-  background-color: rgba(4, 153, 131, 1);
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.9s ease 0s;
+.toggle-button {
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
 }
 
-button:hover {
-  background-color: rgba(4, 153, 131, 0.8);
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
 }
 
 /* banner section */
@@ -118,14 +125,12 @@ button:hover {
   width: 80%;
   height: 80%;
   margin: auto;
-  border: 1px white solid;
 }
 
 #banner h1 {
   color: var(--primary-color);
   font-size: 6rem;
   margin-bottom: 1rem;
-  border: 1px white solid;
 }
 
 #banner h2 {
@@ -133,12 +138,10 @@ button:hover {
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 1rem;
-  border: 1px white solid;
 }
 
 #banner p {
   text-align: center;
-  border: 1px white solid;
 }
 
 /* Sections */
@@ -162,7 +165,6 @@ button:hover {
 .service {
   border: 1px orange solid;
 }
-
 
 /* Utility Classes */
 .container {
@@ -225,4 +227,40 @@ i {
 
 .show {
   display: block;
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #1e1f22;
+    border-bottom: 1px solid var(--primary-color);
+  }
+
+  .toggle-button {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar-links ul {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .navbar-links ul li {
+    text-align: center;
+  }
+
+  .navbar-links ul li a {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-links.active {
+    display: flex;
+    background-color: #1e1f22;
+  }
 }

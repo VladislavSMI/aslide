@@ -1,5 +1,5 @@
 const callOutBox = document.getElementById("callOutBox");
-const header = document.querySelector(".header");
+const navbar = document.querySelector(".navbar");
 
 callOutBox.addEventListener("click", (e) => {
   if (e.target.classList.contains("question")) {
@@ -9,9 +9,17 @@ callOutBox.addEventListener("click", (e) => {
 
 window.addEventListener("scroll", () => {
   let top = window.scrollY;
+  let w = window.outerWidth;
   if (top >= 50) {
-  header.classList.add("active");
+    navbar.classList.add("scrollNav");
   } else {
-  header.classList.remove("active");
+    navbar.classList.remove("scrollNav");
   }
+});
+
+const toggleButton = document.getElementsByClassName("toggle-button")[0];
+const navbarLinks = document.getElementsByClassName("navbar-links")[0];
+
+toggleButton.addEventListener("click", () => {
+  navbarLinks.classList.toggle("active");
 });
