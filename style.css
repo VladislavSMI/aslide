@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 
-/* CSS Variable */
-:root {
-  --primary-color: #08b89d;
-  --secondary-color: #ff6e0b;
-}
-
+/* Universal Styles */
 * {
   box-sizing: border-box;
 }
@@ -19,6 +14,42 @@ body {
   line-height: 1.6;
 }
 
+.section {
+  padding: 2rem 0;
+}
+
+.section-head {
+  font-size: 2rem;
+  margin: 0;
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 1180px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  border: 1px solid orange;
+}
+
+i {
+  padding: 10px;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: #4a4a4a;
+  color: white;
+}
+
+
+
+/* CSS Variable */
+:root {
+  --primary-color: #08b89d;
+  --secondary-color: #ff6e0b;
+}
+
 /* Header */
 .navbar {
   display: flex;
@@ -30,10 +61,10 @@ body {
   /* transition: all 0.5s; */
 }
 
-.scrollNav{
+.scrollNav {
   background-color: #1e1f22;
   border-bottom: 1px solid var(--primary-color);
-  /* transition: all 0.5s; */
+  transition: all 0.5s;
 }
 
 .logo {
@@ -92,6 +123,42 @@ body {
   border-radius: 10px;
 }
 
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #1e1f22;
+    border-bottom: 1px solid var(--primary-color);
+  }
+
+  .toggle-button {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar-links ul {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .navbar-links ul li {
+    text-align: center;
+  }
+
+  .navbar-links ul li a {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-links.active {
+    display: flex;
+    background-color: #1e1f22;
+  }
+}
+
 /* banner section */
 #banner {
   margin: 0;
@@ -144,16 +211,13 @@ body {
   text-align: center;
 }
 
-/* Sections */
-.section {
-  padding: 2rem 0;
+#banner .container {
+  position: relative;
+  top: 6rem;
 }
 
-.section-head {
-  font-size: 2rem;
-  margin: 0;
-  padding: 2rem 0;
-}
+/* Services */
+
 
 .services {
   display: grid;
@@ -164,19 +228,9 @@ body {
 
 .service {
   border: 1px orange solid;
-}
-
-/* Utility Classes */
-.container {
-  max-width: 1180px;
-  text-align: center;
-  margin: 0 auto;
-  padding: 1rem 3rem;
-  border: 1px solid orange;
-}
-
-i {
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Call-out-box */
@@ -262,5 +316,42 @@ i {
   .navbar-links.active {
     display: flex;
     background-color: #1e1f22;
+  }
+}
+
+/* Testemonials */
+
+.image-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.image-container img {
+  position: absolute;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+
+/* Footer */
+footer {
+  padding: 1.5rem 2rem;
+  font-size: 0.75rem;
+}
+
+footer .copyright {
+  flex-grow: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  footer {
+    font-size: 0.625rem;
   }
 }
