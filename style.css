@@ -4,7 +4,7 @@
 :root {
   --primary-color: #08b89d;
   --primary-collor-hover: #057967;
-  --secondary-color: #ff6e0b;
+  --secondary-color: #b80823;
 }
 
 /* Universal Styles */
@@ -14,10 +14,17 @@
   padding: 0;
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
-  font-family: "Merriweather", sans-serif;
-  background-color: #1e1f22;
-  color: #fff;
+  /* font-family: "Merriweather", sans-serif; */
+  Font-Family: 'Droid Serif', Serif;
+  background-color: #151717;
+  color: #fefefe;
   line-height: 1.6;
 }
 
@@ -32,14 +39,19 @@ body {
 }
 
 .container {
-  max-width: 1180px;
+  max-width: 1000px;
   text-align: center;
   margin: 0 auto;
   padding: 1rem;
 }
 
+h1, h2, h3 {
+  Font-Family: 'Roboto', Sans-Serif;
+}
+
 i {
   padding: 10px;
+  color: #e90a2c;
 }
 
 a {
@@ -54,6 +66,7 @@ a {
 
 p {
   padding: 1rem;
+  color: #aeaeae;
 }
 
 @media only screen and (max-width: 600px) {
@@ -79,11 +92,12 @@ p {
 /* Buttons */
 
 .btn {
-  padding: 0.5rem;
+  padding: 0.8rem;
   margin: 0.5rem;
   color: #fff;
   display: inline-block;
   background: var(--primary-color);
+
   border-radius: 10px;
 }
 .btn:hover {
@@ -119,7 +133,6 @@ p {
   align-items: center;
   z-index: 100;
   width: 100%;
-  /* transition: all 0.5s; */
 }
 
 .scrollNav {
@@ -157,10 +170,10 @@ p {
   padding-left: 1.5rem;
   transition: all 0.5s ease 0s;
 }
-
+/* 
 .navbar-links li a {
   transition: all 0.5s ease 0s;
-}
+} */
 
 .navbar-links li a:hover {
   color: var(--primary-color);
@@ -239,6 +252,7 @@ p {
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.7);
+
 }
 
 #banner * {
