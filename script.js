@@ -19,18 +19,37 @@ toggleButton.addEventListener("click", () => {
 });
 
 callOutBox.addEventListener("click", (e) => {
-  var target = e.target;
-  var parent = target.parentElement;
+  // var target = e.target;
+  // var parent = target.parentElement;
   
-  if (parent.classList.contains("question")) {
-    parent.nextElementSibling.classList.toggle("show");
-  } else if (target.classList.contains("question")) {
-    target.nextElementSibling.classList.toggle("show");
+ 
+  if (e.target.parentElement.classList.contains("question")) {
+    e.target.parentElement.nextElementSibling.classList.toggle("show");
+  } else if (e.target.classList.contains("question")) {
+    e.target.nextElementSibling.classList.toggle("show");
   }
+
+  val = e.target;
+
+  console.log(val);
+  
 });
+
+
+
 
 // callOutBox.addEventListener("click", (e) => {
 //   if (e.target.classList.contains("question")) {
 //     e.target.nextElementSibling.classList.toggle("show");
 //   }
 // });
+
+// let qaBoxes = document.querySelectorAll(".question");
+
+// qaBoxes.forEach(function(item){
+//   item.addEventListener("click", (e) => {
+//     e.target.nextElementSibling.classList.toggle("show");
+//     e.target.parentElement.nextElementSibling.classList.toggle("show");
+//   })
+// })
+
