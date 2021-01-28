@@ -248,7 +248,7 @@ p {
   width: 100%;
   height: 100vh;
   position: relative;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 /* Banner study section */
