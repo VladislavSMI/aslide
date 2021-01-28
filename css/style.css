@@ -494,6 +494,9 @@ p {
 }
 
 /* Study subpage - overview */
+#overview {
+  overflow-x: hidden;
+}
 
 #timeline ul {
   margin: 0 50px;
