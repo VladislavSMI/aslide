@@ -29,7 +29,6 @@ body {
   line-height: 1.6;
 }
 
-
 img {
   width: 100%;
 }
@@ -76,7 +75,7 @@ a {
 
 li {
   list-style-type: none;
-  color: #aeaeae
+  color: #aeaeae;
 }
 
 .border {
@@ -175,20 +174,52 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-
   margin-right: 1.5rem;
   padding: 0;
+  list-style: none;
 }
 
-.navbar-links li {
-  list-style: none;
+/* Nested drop down */
+.navbar-links ul li {
+  position: relative;
+  width: 100px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.fas {
+  padding: 0;
+  margin: 0 0 0 0.5rem;
+}
+
+/* Hide nested ul by default */
+.navbar-links ul li ul {
+  display: none;
+}
+
+/* Nested dropdown show */
+.navbar-links ul li:hover ul {
+  display: block;
+  position: absolute;
+  left: 0;
+  margin-top: 0.1rem;
+}
+
+.navbar-links ul li:hover ul li {
+  display: block;
+  width: 200px;
+  padding: 0.3rem;
+  text-align: left;
+}
+
+.navbar-links ul li:hover ul li:nth-child(1) {
+  margin-top: 0.5rem;
 }
 
 .navbar-links li a {
   display: block;
   text-decoration: none;
   color: #fff;
-  margin-right: 1.5rem;
   transition: all 0.5s ease 0s;
 }
 
@@ -233,20 +264,41 @@ p {
 
   .navbar-links ul {
     width: 100%;
+    display: flex;
     flex-direction: column;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
   }
 
   .navbar-links ul li {
-    text-align: center;
+    text-align: left;
   }
 
   .navbar-links ul li a {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
   }
 
   .navbar-links.active {
     display: flex;
     background-color: #1e1f22;
+  }
+
+  .navbar-links ul li:hover ul {
+    width: 100%;
+    position: relative;
+  }
+
+  .navbar-links ul li:hover ul li a {
+    font-size: 0.8rem;
+  }
+
+  .navbar-links ul li:hover ul li {
+    border-top: 1px dotted var(--primary-color);
+  }
+
+  .navbar-links ul li:hover ul li:last-child {
+    border-bottom: 1px dotted var(--primary-color);
   }
 }
 
@@ -803,7 +855,8 @@ textarea:focus {
   height: 20px;
 }
 
-.contact-info .fab, .contact-info .far {
+.contact-info .fab,
+.contact-info .far {
   margin: 1rem;
   border: 2px var(--primary-color) solid;
   border-radius: 50%;
