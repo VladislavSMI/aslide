@@ -13,6 +13,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* overflow-x: hidden; */
 }
 
 *,
@@ -130,17 +131,24 @@ p {
   height: 350px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .video {
-    width: 350px;
-    height: 200px;
+    width: 400px;
+    height: 225px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .video {
+    width: 256px;
+    height: 144px;
   }
 }
 
 @media only screen and (max-width: 350px) {
   .video {
-    width: 300px;
-    height: 175px;
+    width: 224px;
+    height: 126px;
   }
 }
 
@@ -296,13 +304,13 @@ p {
     font-size: 0.8rem;
   }
 
-  .navbar-links ul li:hover ul li {
+  /* .navbar-links ul li:hover ul li {
     border-top: 1px dotted var(--primary-color);
-  }
+  } */
 
-  .navbar-links ul li:hover ul li:last-child {
+  /* .navbar-links ul li:hover ul li:last-child {
     border-bottom: 1px dotted var(--primary-color);
-  }
+  } */
 }
 
 /* banner section */
@@ -316,8 +324,8 @@ p {
   overflow: hidden;
 }
 
-/* Banner study section */
-.study {
+/* Banner for subpages */
+.subpage {
   height: 50vh !important;
 }
 
@@ -397,6 +405,12 @@ p {
 
   #banner p {
     font-size: 0.85rem;
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  #banner {
+    overflow-x: hidden;
   }
 }
 
