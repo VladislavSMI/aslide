@@ -1,4 +1,4 @@
-const callOutBox = document.getElementById("callOutBox");
+// NavBar
 const navbar = document.querySelector(".navbar");
 
 window.addEventListener("scroll", () => {
@@ -18,46 +18,31 @@ toggleButton.addEventListener("click", () => {
   navbarLinks.classList.toggle("active");
 });
 
-callOutBox.addEventListener("click", (e) => {
-  // var target = e.target;
-  // var parent = target.parentElement;
-  
- 
-  if (e.target.parentElement.classList.contains("question")) {
-    e.target.parentElement.nextElementSibling.classList.toggle("show");
-  } else if (e.target.classList.contains("question")) {
-    e.target.nextElementSibling.classList.toggle("show");
-  }
+// Call Out Box
+const callOutBox = document.querySelectorAll(".callOutBox");
+callOutBox.forEach((item) => {
+  // // To hide other call out boxes when opening new one
+  // const answers = document.getElementsByClassName("answer show");
+  // item.addEventListener("click", removeAnswers);
 
-  val = e.target;
-
-  console.log(val);
-  
+  // function removeAnswers() {
+  //   while (answers[0]) {
+  //     answers[0].classList.remove("show");
+  //   }
+  // }
+  item.addEventListener("click", (e) => {
+    if (e.target.parentElement.classList.contains("question")) {
+      e.target.parentElement.nextElementSibling.classList.toggle("show");
+    } else if (e.target.classList.contains("question")) {
+      e.target.nextElementSibling.classList.toggle("show");
+    }
+  });
 });
 
-
-
-
-// callOutBox.addEventListener("click", (e) => {
-//   if (e.target.classList.contains("question")) {
-//     e.target.nextElementSibling.classList.toggle("show");
-//   }
-// });
-
-// let qaBoxes = document.querySelectorAll(".question");
-
-// qaBoxes.forEach(function(item){
-//   item.addEventListener("click", (e) => {
-//     e.target.nextElementSibling.classList.toggle("show");
-//     e.target.parentElement.nextElementSibling.classList.toggle("show");
-//   })
-// })
-
-
 // Timeline
-const items = document.querySelectorAll('#timeline li');
+const items = document.querySelectorAll("#timeline li");
 
-const isInViewport = el => {
+const isInViewport = (el) => {
   const rect = el.getBoundingClientRect();
   return (
     rect.top >= 0 &&
@@ -69,13 +54,19 @@ const isInViewport = el => {
 };
 
 const run = () =>
-  items.forEach(item => {
+  items.forEach((item) => {
     if (isInViewport(item)) {
-      item.classList.add('show');
+      item.classList.add("show");
     }
   });
 
 // Events
-window.addEventListener('load', run);
-window.addEventListener('resize', run);
-window.addEventListener('scroll', run);
+window.addEventListener("load", run);
+window.addEventListener("resize", run);
+window.addEventListener("scroll", run);
+
+
+// Current year
+const today = new Date();
+const year = document.getElementById("year");
+year.innerHTML = today.getFullYear();

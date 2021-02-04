@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/ebe1bdd444.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Droid+Serif|Roboto:300"
+      rel="stylesheet"
+    />
+    <title>A-SLIDE - Contuct us!</title>
+  </head>
+  <body>
+    <!-- Showcase & Nav -->
+    <nav class="navbar">
+      <a href="./index.html"
+        ><img class="logo" src="./img/logo/Logo transparent.png" alt="logo"
+      /></a>
+      <div class="navbar-links">
+        <ul>
+          <li><a href="./index.html">HOME</a></li>
+          <li><a href="./study.html">STUDY</a></li>
+          <li><a href="./contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+    </nav>
+
+    <div id="banner" class="study">
+      <div class="banner-text container">
+        <h1>A-SLIDE</h1>
+        <h2>Contact us</h2>
+      </div>
+    </div>
+
+  <!-- Section A: Contact Form -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-head">Do you want to know more?</h2>
+        <form method="POST" data-netlify="true"  data-netlify-recaptcha="true">
+          <div class="text-fields">
+            <input
+              type="text"
+              class="text-input name-input"
+              placeholder="Name"
+              name="name"
+            />
+            <input
+              type="text"
+              class="text-input subject-input"
+              placeholder="Subject"
+              name="subject"
+            />
+            <input
+              type="email"
+              class="text-input email-input"
+              placeholder="Email Address"
+              name="email"
+            />
+            <textarea
+              class="text-input message-input"
+              placeholder="Enter Message"
+              name="message"
+            ></textarea>
+            <div class="checkbox">
+              <input class="text-input checkbox-input" type="checkbox" name="policy" id="policy" required>
+              <label for="policy"> I agree with the handling of my data in accordance with <a href="./policy.html" target="_blank"><u>Terms and Conditions</u></a></label>
+            </div>
+            <div>
+               <div data-netlify-recaptcha="true"></div>
+            </div>
+          </div>
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-head-smaller">Or reach us via one of the following options:</h2>
+        <div class="social contact-info">
+          <a href="http://www.facebook.com/aslide.eu"><i class="fab fa-facebook fa-4x"></i></i></a>
+        </i><a href="https://www.youtube.com/channel/UCvstgcTPsOKi31jbm_ni8Lw"><i class="fab fa-youtube fa-4x"></i></i></a>
+          <a href="http://www.linkedin.com/company/15183145"><i class="fab fa-linkedin fa-4x"></i></i></a>
+          <a href="info@aslide.eu"><i class="far fa-envelope fa-4x"></i></i></a>
+        </div>
+      </div>
+    </section>
+    
+   
+    <!-- Footer -->
+    <footer>
+      <div class="footer-contact container">
+        <p>Copyright &copy; <span id="year"></span> A-SLIDE. All Rights Reserved</p>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
