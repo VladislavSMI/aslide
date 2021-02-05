@@ -4,7 +4,6 @@
 :root {
   --primary-color: #08b89d;
   --primary-collor-hover: #057967;
-  /* --secondary-color: #b80823; */
   --secondary-color: #ff6e0b;
 }
 
@@ -23,7 +22,6 @@
 }
 
 body {
-  /* font-family: "Merriweather", sans-serif; */
   font-family: "Droid Serif", Serif;
   background-color: #151717;
   color: #fefefe;
