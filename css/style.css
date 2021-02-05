@@ -301,11 +301,11 @@ p {
   .navbar-links ul li:hover ul li a {
     font-size: 0.8rem;
   }
-
 }
 
 /* banner section */
-#banner, #banner-subpage {
+#banner,
+#banner-subpage {
   margin: 0;
   padding: 0;
   background: url("../img/home/Shanghai_landscape_2.jpg") no-repeat center/cover;
@@ -322,8 +322,8 @@ p {
   height: 50vh;
 }
 
-
-#banner::after, #banner-subpage::after {
+#banner::after,
+#banner-subpage::after {
   content: "";
   position: absolute;
   top: 0;
@@ -333,7 +333,8 @@ p {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-#banner *, #banner-subpage * {
+#banner *,
+#banner-subpage * {
   z-index: 1;
 }
 
@@ -367,7 +368,8 @@ p {
   margin-bottom: 0.5rem;
 }
 
-#banner .container, #banner-subpage .container {
+#banner .container,
+#banner-subpage .container {
   position: relative;
   top: 4.5rem;
 }
@@ -387,7 +389,6 @@ p {
 }
 
 @media only screen and (max-width: 600px) {
-
   .banner-text h1 {
     font-size: 3rem;
   }
@@ -416,18 +417,21 @@ p {
 }
 
 @media only screen and (orientation: landscape) {
-  #banner, #banner-subpage {
+  #banner,
+  #banner-subpage {
     overflow-x: hidden;
   }
+}
 
+@media only screen and (max-device-width: 1100px) {
   #banner-subpage {
     height: 100vh;
   }
 }
 
+
 /* Galaxy fold specifics */
 @media only screen and (max-width: 655px) and (orientation: landscape) {
-
   .banner-text h1 {
     font-size: 2.5rem;
   }
@@ -439,7 +443,6 @@ p {
   .banner-text p {
     font-size: 0.75rem;
   }
-
 }
 
 /* Services */
@@ -541,8 +544,8 @@ p {
 
 .image-container {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   overflow: hidden;
 }
 
@@ -566,9 +569,17 @@ p {
   letter-spacing: 0.115rem;
 }
 
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .social .fab,
 .social .far {
   margin-right: 1rem;
+  margin-bottom: 0.5rem;
   border: 2px var(--primary-color) solid;
   border-radius: 50%;
   height: 20px;
@@ -586,10 +597,8 @@ p {
 
 @media only screen and (max-width: 800px) {
   .footer-content {
-    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     height: 4rem;
     margin-bottom: 2rem;
   }
@@ -598,7 +607,8 @@ p {
     font-size: 0.7rem;
   }
 
-  .social .fab {
+  .social .fab,
+  .social .far {
     border-radius: 50%;
     height: 15px;
     width: 15px;
@@ -883,12 +893,12 @@ textarea:focus {
   outline: none;
 }
 
-.checkbox {
+#contact .checkbox {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0.3rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
 }
 
 .checkbox label {
@@ -896,8 +906,23 @@ textarea:focus {
 }
 
 .checkbox input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+@media (max-width: 500px) {
+  .checkbox label {
+    font-size: 0.9rem;
+  }
+}
+
+/* Contact info section */
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .contact-info .fab,
@@ -919,4 +944,14 @@ textarea:focus {
   align-items: center;
   height: 5rem;
   letter-spacing: 0.115rem;
+}
+
+@media (max-width: 720px) {
+  .contact-info .fab,
+  .contact-info .far {
+    margin: 0.5rem;
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
+  }
 }
