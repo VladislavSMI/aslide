@@ -429,7 +429,6 @@ p {
   }
 }
 
-
 /* Galaxy fold specifics */
 @media only screen and (max-width: 655px) and (orientation: landscape) {
   .banner-text h1 {
@@ -742,10 +741,6 @@ p {
     left: -16px;
     border-width: 8px 16px 8px 0;
     border-color: transparent var(--primary-color) transparent transparent;
-  }
-
-  #timeline ul li div h3 {
-    margin-left: -40px;
   }
 }
 
