@@ -21,6 +21,10 @@
   box-sizing: inherit;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Droid Serif", Serif;
   background-color: #151717;
@@ -31,6 +35,13 @@ body {
 .container-main {
   width: 100%;
   overflow-x: hidden;
+}
+
+.container {
+  max-width: 1000px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 1rem 1.2rem;
 }
 
 img {
@@ -51,13 +62,6 @@ img {
   font-size: 1.5rem;
   margin: 0;
   padding: 1rem 0;
-}
-
-.container {
-  max-width: 1000px;
-  text-align: center;
-  margin: 0 auto;
-  padding: 1rem 1.2rem;
 }
 
 h1,
@@ -569,62 +573,6 @@ p {
   border-radius: 50%;
 }
 
-/* Footer */
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 5rem;
-  letter-spacing: 0.115rem;
-}
-
-.social {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.social .fab,
-.social .far {
-  margin-right: 1rem;
-  margin-bottom: 0.5rem;
-  border: 2px var(--primary-color) solid;
-  border-radius: 50%;
-  height: 20px;
-  width: 20px;
-  line-height: 20px;
-  text-align: center;
-  padding: 0.5rem;
-  color: var(--primary-color);
-}
-
-.social .fab:hover,
-.social .far:hover {
-  color: var(--primary-collor-hover);
-}
-
-@media only screen and (max-width: 800px) {
-  .footer-content {
-    flex-direction: column;
-    justify-content: center;
-    height: 4rem;
-    margin-bottom: 2rem;
-  }
-
-  .footer-content p {
-    font-size: 0.7rem;
-  }
-
-  .social .fab,
-  .social .far {
-    border-radius: 50%;
-    height: 15px;
-    width: 15px;
-    line-height: 15px;
-  }
-}
-
 /* Study subpage - overview */
 #overview {
   overflow-x: hidden;
@@ -960,4 +908,103 @@ textarea:focus {
     width: 80px;
     line-height: 80px;
   }
+}
+
+/* Footer */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  letter-spacing: 0.115rem;
+}
+
+.footer-content .social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-right: 4rem;
+}
+
+.footer-content .social .fab,
+.footer-content .social .far {
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+  border: 2px var(--primary-color) solid;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+  text-align: center;
+  padding: 0.5rem;
+  color: var(--primary-color);
+}
+
+.social .fab:hover,
+.social .far:hover {
+  color: var(--primary-collor-hover);
+}
+
+@media only screen and (max-width: 800px) {
+  .footer-content {
+    flex-direction: column;
+    justify-content: center;
+    height: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-content p {
+    font-size: 0.7rem;
+  }
+
+  .footer-content .social {
+    margin-right: 0;
+  }
+
+  .footer-content .social .fab,
+  .footer-content .social .far {
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    line-height: 15px;
+  }
+}
+
+/* Scroll up button */
+
+.scroll-up-container {
+  position: absolute;
+  right: 5rem;
+}
+
+.scroll-up-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+  position: fixed;
+  bottom: 2.65rem;
+  right: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+  transition: background-color 0.5s;
+}
+
+.scroll-up-btn i {
+  margin: 0;
+}
+
+.scroll-up-btn:hover {
+  background-color: var(--primary-collor-hover);
+}
+
+@media (max-width: 400px) {
+  .scroll-up-btn {
+    bottom: 2rem;
+    right: 1.5rem;
+  } 
 }
