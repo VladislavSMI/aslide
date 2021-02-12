@@ -28,6 +28,11 @@ body {
   line-height: 1.6;
 }
 
+.container-main {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 img {
   width: 100%;
 }
