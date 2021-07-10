@@ -19,7 +19,7 @@ toggleButton.addEventListener("click", () => {
 });
 
 // Call Out Box
-const callOutBox = document.querySelectorAll(".callOutBox");
+const callOutBox = document.querySelectorAll(".qaBox");
 callOutBox.forEach((item) => {
   // // To hide other call out boxes when opening new one
   // const answers = document.getElementsByClassName("answer show");
@@ -64,7 +64,6 @@ const run = () =>
 window.addEventListener("load", run);
 window.addEventListener("resize", run);
 window.addEventListener("scroll", run);
-
 
 // Current year
 const today = new Date();
