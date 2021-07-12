@@ -39,6 +39,15 @@ callOutBox.forEach((item) => {
   });
 });
 
+//Call Out Box => easier solution with whole .qaBox div as clickable area even answer div => css selector .qaBox.show .answer {display: block}
+// const toggles = document.querySelectorAll(".qaBox");
+
+// toggles.forEach((toggle) => {
+//   toggle.addEventListener("click", () => {
+//     toggle.classList.toggle("show");
+//   });
+// });
+
 // Timeline
 const items = document.querySelectorAll("#timeline li");
 
