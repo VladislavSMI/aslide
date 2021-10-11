@@ -319,8 +319,7 @@ p {
 #banner-subpage {
   margin: 0;
   padding: 0;
-  background: url("../img/home/Shanghai_landscape_2_low.jpg") no-repeat
-    center/cover;
+  background: url("../img/home/Shanghai_landscape_1.jpg") no-repeat center/cover;
   width: 100%;
   position: relative;
   overflow: hidden;
