@@ -21,15 +21,6 @@ toggleButton.addEventListener("click", () => {
 // Call Out Box
 const callOutBox = document.querySelectorAll(".qaBox");
 callOutBox.forEach((item) => {
-  // // To hide other call out boxes when opening new one
-  // const answers = document.getElementsByClassName("answer show");
-  // item.addEventListener("click", removeAnswers);
-
-  // function removeAnswers() {
-  //   while (answers[0]) {
-  //     answers[0].classList.remove("show");
-  //   }
-  // }
   item.addEventListener("click", (e) => {
     if (e.target.parentElement.classList.contains("question")) {
       e.target.parentElement.nextElementSibling.classList.toggle("show");
@@ -38,15 +29,6 @@ callOutBox.forEach((item) => {
     }
   });
 });
-
-//Call Out Box => easier solution with whole .qaBox div as clickable area even answer div => css selector .qaBox.show .answer {display: block}
-// const toggles = document.querySelectorAll(".qaBox");
-
-// toggles.forEach((toggle) => {
-//   toggle.addEventListener("click", () => {
-//     toggle.classList.toggle("show");
-//   });
-// });
 
 // Timeline
 const items = document.querySelectorAll("#timeline li");

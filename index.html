@@ -1,19 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css"
+    />
     <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-MGKWQFDLCV"
+      src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js"
+      data-cfasync="false"
     ></script>
     <script>
+      var popup;
+      window.addEventListener("load", function () {
+        window.cookieconsent.initialise({
+          type: "opt-in",
+          theme: "classic",
+          palette: {
+            popup: {
+              background: "#000",
+              text: "#fff",
+            },
+            button: {
+              background: "#08b89d",
+              text: "#000",
+            },
+          },
+
+          content: {
+            deny: "Reject",
+            allow: "Accept",
+            href: "https://www.aslide.eu/policy.html",
+          },
+          onInitialise: function (status) {
+            if (status == cookieconsent.status.allow) setCookies();
+          },
+          onStatusChange: function (status) {
+            if (this.hasConsented()) setCookies();
+            else deleteCookies(this.options.cookie.name);
+          },
+
+          function(p) {
+            popup = p;
+          },
+        });
+      });
+
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
 
+      gtag("js", new Date());
       gtag("config", "G-MGKWQFDLCV");
+
+      function setCookies() {
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.async = "true";
+        s.src = "https://www.googletagmanager.com/gtag/js?id=G-MGKWQFDLCV";
+        var x = document.getElementsByTagName("script")[0];
+        x.parentNode.insertBefore(s, x);
+      }
+
+      function deleteCookies(cookieconsent_name) {
+        var keep = [cookieconsent_name];
+
+        document.cookie.split(";").forEach(function (c) {
+          c = c.split("=")[0].trim();
+          if (!~keep.indexOf(c))
+            document.cookie =
+              c + "=;" + "expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/";
+        });
+      }
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -49,33 +108,6 @@
     <title>
       A-SLIDE - CHINESE LANGUAGE COURSES AND UNIVERSITY DEGREES IN CHINA!
     </title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.css"
-    />
-    <script
-      src="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.js"
-      defer
-    ></script>
-    <script>
-      window.addEventListener("load", function () {
-        window.wpcc.init({
-          border: "thin",
-          corners: "small",
-          colors: {
-            popup: {
-              background: "#f6f6f6",
-              text: "#000000",
-              border: "#555555",
-            },
-            button: { background: "#555555", text: "#ffffff" },
-          },
-          position: "bottom",
-          content: { href: "https://www.aslide.eu/policy.html" },
-        });
-      });
-    </script>
   </head>
   <body>
     <div class="container-main">
