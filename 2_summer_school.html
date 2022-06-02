@@ -32,6 +32,9 @@
             allow: "Accept",
             href: "https://www.aslide.eu/policy.html",
           },
+
+          revokeBtn: "<div class=”cc-revoke ”></div>",
+          
           onInitialise: function (status) {
             if (status == cookieconsent.status.allow) setCookies();
           },

@@ -3,78 +3,80 @@
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css"
-  />
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js"
-    data-cfasync="false"
-  ></script>
-  <script>
-    var popup;
-    window.addEventListener("load", function () {
-      window.cookieconsent.initialise({
-        type: "opt-in",
-        theme: "classic",
-        palette: {
-          popup: {
-            background: "#000",
-            text: "#fff",
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js"
+      data-cfasync="false"
+    ></script>
+    <script>
+      var popup;
+      window.addEventListener("load", function () {
+        window.cookieconsent.initialise({
+          type: "opt-in",
+          theme: "classic",
+          palette: {
+            popup: {
+              background: "#000",
+              text: "#fff",
+            },
+            button: {
+              background: "#08b89d",
+              text: "#000",
+            },
           },
-          button: {
-            background: "#08b89d",
-            text: "#000",
+
+          revokeBtn: "<div class=”cc-revoke ”></div>",
+
+          content: {
+            deny: "Reject",
+            allow: "Accept",
+            href: "https://www.aslide.eu/policy.html",
           },
-        },
+          onInitialise: function (status) {
+            if (status == cookieconsent.status.allow) setCookies();
+          },
+          onStatusChange: function (status) {
+            if (this.hasConsented()) setCookies();
+            else deleteCookies(this.options.cookie.name);
+          },
 
-        content: {
-          deny: "Reject",
-          allow: "Accept",
-          href: "https://www.aslide.eu/policy.html",
-        },
-        onInitialise: function (status) {
-          if (status == cookieconsent.status.allow) setCookies();
-        },
-        onStatusChange: function (status) {
-          if (this.hasConsented()) setCookies();
-          else deleteCookies(this.options.cookie.name);
-        },
-
-        function(p) {
-          popup = p;
-        },
+          function(p) {
+            popup = p;
+          },
+        });
       });
-    });
 
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
 
-    gtag("js", new Date());
-    gtag("config", "G-MGKWQFDLCV");
+      gtag("js", new Date());
+      gtag("config", "G-MGKWQFDLCV");
 
-    function setCookies() {
-      var s = document.createElement("script");
-      s.type = "text/javascript";
-      s.async = "true";
-      s.src = "https://www.googletagmanager.com/gtag/js?id=G-MGKWQFDLCV";
-      var x = document.getElementsByTagName("script")[0];
-      x.parentNode.insertBefore(s, x);
-    }
+      function setCookies() {
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.async = "true";
+        s.src = "https://www.googletagmanager.com/gtag/js?id=G-MGKWQFDLCV";
+        var x = document.getElementsByTagName("script")[0];
+        x.parentNode.insertBefore(s, x);
+      }
 
-    function deleteCookies(cookieconsent_name) {
-      var keep = [cookieconsent_name];
+      function deleteCookies(cookieconsent_name) {
+        var keep = [cookieconsent_name];
 
-      document.cookie.split(";").forEach(function (c) {
-        c = c.split("=")[0].trim();
-        if (!~keep.indexOf(c))
-          document.cookie =
-            c + "=;" + "expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/";
-      });
-    }
-  </script>
+        document.cookie.split(";").forEach(function (c) {
+          c = c.split("=")[0].trim();
+          if (!~keep.indexOf(c))
+            document.cookie =
+              c + "=;" + "expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/";
+        });
+      }
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
